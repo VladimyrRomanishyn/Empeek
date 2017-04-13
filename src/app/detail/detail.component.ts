@@ -22,6 +22,7 @@ export class DetailComponent implements OnInit{
 
   ngOnInit() {
     this.getData();
+    this.checkHeight();
   }
 
   setData(){
@@ -50,15 +51,14 @@ export class DetailComponent implements OnInit{
     this.comments = undefined;
     this.edit = false;
     this.setData();
-    this.checkHeight('items');
+
   }
 
   showComments(item, event){
     
     let clear = document.getElementsByClassName('red');
     let elem = event.target.parentNode;
-     this.checkHeight('comments');
-    if(clear.length){
+    if (clear.length){
       
       for(let i=0, len = clear.length; i < len; i++){
         clear[i].className = 'item-wrap';
@@ -73,15 +73,10 @@ export class DetailComponent implements OnInit{
     }
     
     this.comments = item.userComments;
-    this.itemIndex = this.Data.indexOf(item);
-    
+    this.itemIndex = this.Data.indexOf(item); 
     this.comment = null
     this.edit = true; 
-    
-    this.checkHeight('comments');
-  
-   
-  }
+}
 
   createNew(){
     
@@ -93,7 +88,7 @@ export class DetailComponent implements OnInit{
     this.Data.push(new Theme(this.addName) );
     this.setData();
     this.addName = null;
-    this.checkHeight('items');
+
   }
 
  addComment(event){
@@ -109,37 +104,33 @@ export class DetailComponent implements OnInit{
         this.Data[this.itemIndex].numberComments = ++currAmountComments;;
         this.setData();
         this.comment = null;
-        this.checkHeight('comments');
     
     } else {
         return;
     }
   }
-
-  // checkHeight(element){
+  
+  checkHeight(){
    
-  //   let item = document.getElementById(element);
-  //    console.log(item.clientHeight);
-  //   let doc = document.documentElement.clientHeight;
-  //   let percent = Math.round(item.clientHeight/doc *100);
+    let items = document.getElementById('items');
+    let comments = document.getElementById('comments');
+    
+    let observer = new MutationObserver((target:any)=>{
+         
+          target.forEach(element => {
+            let doc = document.documentElement.clientHeight;
+            let percent = Math.round(element.target.clientHeight/doc * 100);
 
-  //   if (percent > 80) {
-      
-  //     item.style.height = '90%';
-  //     item.style.overflow = 'auto';
-  //   }
-  // }
-  checkHeight(element){
-   
-    let item = document.getElementById(element);
-     console.log(item.clientHeight);
-    let doc = document.documentElement.clientHeight;
-    let percent = Math.round(item.clientHeight/doc *100);
+            if (percent > 80) {
 
-    if (percent > 80) {
-      
-      item.style.height = '90%';
-      // item.style.overflow = 'auto';
-    } 
-  }
+             element.target.style.overflowY= 'auto';
+            }
+          }); 
+    });
+    
+    const config = { attributes: true, childList: true, characterData: true }
+    
+    observer.observe(items, config);
+    observer.observe(comments, config);
+  } 
 }
