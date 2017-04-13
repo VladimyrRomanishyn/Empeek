@@ -1,0 +1,12 @@
+h1,h2{
+    text-align: center;
+    margin: 5%;
+    color: forestgreen;
+}
+h1{
+    font: bold 5vw "Open Sans", sans-serif;
+}
+h2{
+    font: bold 2vw "Open Sans", sans-serif;
+}
+ 
