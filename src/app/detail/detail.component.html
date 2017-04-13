@@ -1,0 +1,25 @@
+<div class='items' id='items'>
+    <h2>Items</h2>
+    <div class='addItem'>
+        <input type="text" placeholder="Type name here..." #name = 'ngModel' [(ngModel)]='addName' required >
+        <input type="button" [disabled]="name.invalid" value='Add item' (click)='createNew()'>
+    </div>
+    <div class="item-wrap" *ngFor='let item of Data'>
+        <div class='item'(click)='showComments(item, $event)'>
+            <span class='itemName' >{{item.name}}</span>
+            <span class='commentsNumber'>{{item.numberComments}}</span>
+            <input type="button" value='Delete' (click)='delete(item)'>
+        </div>
+    </div>
+</div>
+<div class='comments' id ='comments'>
+    <h2>#Comments</h2>
+    <div class="comment" *ngFor='let i of comments'>
+        <img src="{{i.avatarURL}}" alt="avatar" >
+        <span>{{i.comment}}</span>
+    </div>
+    <div *ngIf='edit' class="self-comment">
+        <img src="assets/images/avatar_2.gif" alt="avatar1">
+        <textarea name="self"  cols="30" rows="10" placeholder="press 'Enter' to Save" [(ngModel)]='comment' #comdata = 'ngModel'(keyup)='addComment($event)'></textarea>
+    </div>
+</div>

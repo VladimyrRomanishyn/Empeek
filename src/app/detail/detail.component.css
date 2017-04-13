@@ -1,0 +1,125 @@
+.items, .comments{
+    position: absolute;
+    width: 45%;
+    background:#fff;
+   
+    margin: 3% 1% 0 0;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    overflow: auto;
+}
+.items{
+    left: 3vw;
+}
+.comments{
+    right: 3vw;
+}
+
+.items h2, .comments h2{
+     font: lighter  2.5vw  "Open-Sans", sans-serif; 
+     color: #565a69;
+     margin: 2vw 3vw ;
+}
+
+.addItem{
+    margin-bottom: 5%;
+}
+
+.addItem input[type=text]{
+    float: left;
+    width: 60%;
+    height: 3vw;
+    margin: 0 2% 0 5%;
+    padding-left: 2%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font: lighter 1.5vw  "Open-Sans", sans-serif; 
+    color: #b3b3b3;
+}
+.addItem input[type=button]{
+    display: block;
+    width: 27%;
+    height: 3.3vw;
+    background: #27ccc0;
+    color: #fff;
+    border-radius: 4px;
+    font: bold  1.5vw  "Open-Sans", sans-serif; 
+    border:none;
+}
+.addItem input[type=button]:active{
+    background: red;
+    outline:none;
+}
+.red{
+    border-left: 8px solid #ff2f5a;
+}
+.item{
+    position: relative;
+    height: 5vw;
+    line-height: 5vw;
+    margin:0 5%;
+    border-bottom: 2px solid #f2f2f2;
+}
+.itemName{
+    color: #2b2f3e;
+    font: bold  1vw  "Open-Sans", sans-serif; 
+    cursor: pointer;
+}
+.commentsNumber{
+    background: #27ccc0;
+    padding:  1% 2%;
+    margin: 2%;
+    border-radius: 45%;
+    color: #fff;
+    font: bold  1.5vw  "Open-Sans", sans-serif; 
+}
+.item input[type=button]{
+    position: absolute;
+    right: 0;
+    top: 15%;
+    width: 24%;
+    height: 3.3vw;
+    border-radius: 5px;
+    border: 1px solid #ff3159;
+    background: #fff;
+    font:  1.3vw  "Open-Sans", sans-serif;
+    color: #ff305a; 
+}
+.item input[type=button]:active{
+    background: #ff305a;
+    color: #fff;
+    outline:none;
+}
+.comment{
+    margin:0 4% 5% 4%;
+    padding-bottom: 4%;
+    font:  1vw  "Open-Sans", sans-serif;
+    color: #666666;
+    border-bottom: 2px solid #f2f2f2;
+}
+.comments img{
+    width: 70px;
+    height: 70px;
+    float:left; 
+    margin-right: 4%;
+}
+.comment span{
+    display: inline-block;
+    width: 75%;
+    min-height: 70px;
+}
+.self-comment{
+    margin:0 4% 5% 4%;
+}
+.self-comment textarea{
+    width: 70%;
+    height: 80px;
+    border: 1px solid #f2f2f2;
+    font:  1vw  "Open-Sans", sans-serif;
+    color: #666666;
+    border-radius: 4px;
+    resize: none;
+}
+
+
+ 

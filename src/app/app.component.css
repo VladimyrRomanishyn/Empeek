@@ -1,0 +1,56 @@
+
+.container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.sidebar{
+    position: absolute;
+    background:#2b2f3e;
+    top:0;
+    left:0;
+    width:17%;
+    height: 100%;  
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;  
+}
+.sidebar h2{
+    position: relative;
+    margin:  2vw 0  6vw 2vw;
+    color: #565a69;
+    font: lighter  2.5vw  "Open-Sans", sans-serif; 
+    cursor: pointer;
+}
+.sidebar ul li{
+  
+    height: 4.5vw;
+    text-align: center;
+    font: 1.5vw "Open-Sans", sans-serif;
+    color: #fff;
+    cursor: pointer;
+    line-height: 4.5vw;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.bg{
+    background:#ff3a51;
+}
+.content{
+    position: absolute;
+    top: 0;
+    right:0;
+    background: #f9f9f9;
+    width:83%;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
