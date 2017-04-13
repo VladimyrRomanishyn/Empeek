@@ -6,7 +6,7 @@
     margin: 3% 1% 0 0;
     border: 2px solid #eee;
     border-radius: 3px;
-    /*overflow-y:scroll ;*/
+    overflow-y:auto;
 }
 .items{
     left: 3vw;

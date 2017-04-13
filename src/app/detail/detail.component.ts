@@ -22,7 +22,6 @@ export class DetailComponent implements OnInit{
 
   ngOnInit() {
     this.getData();
-    this.checkHeight();
   }
 
   setData(){
@@ -110,27 +109,4 @@ export class DetailComponent implements OnInit{
     }
   }
   
-  checkHeight(){
-   
-    let items = document.getElementById('items');
-    let comments = document.getElementById('comments');
-    
-    let observer = new MutationObserver((target:any)=>{
-         
-          target.forEach(element => {
-            let doc = document.documentElement.clientHeight;
-            let percent = Math.round(element.target.clientHeight/doc * 100);
-
-            if (percent > 80) {
-
-             element.target.style.overflowY= 'auto';
-            }
-          }); 
-    });
-    
-    const config = { attributes: true, childList: true, characterData: true }
-    
-    observer.observe(items, config);
-    observer.observe(comments, config);
-  } 
 }
